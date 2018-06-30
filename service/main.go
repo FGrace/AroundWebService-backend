@@ -15,7 +15,7 @@ import (
 	"github.com/auth0/go-jwt-middleware"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
-	"cloud.google.com/go/bigtable"
+//	"cloud.google.com/go/bigtable"
 
 
 )
@@ -224,11 +224,11 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	saveToES(p, id)
 
 	// Save to BigTable.
-	saveToBigTable(p, id)
+//	saveToBigTable(p, id)
 
 }
 
-func saveToBigTable(p *Post, id string){
+/*func saveToBigTable(p *Post, id string){
 	ctx := context.Background()
 	// you must update project name here
 	bt_client, err := bigtable.NewClient(ctx, PROJECT_ID, BT_INSTANCE)
@@ -254,7 +254,7 @@ func saveToBigTable(p *Post, id string){
 		   return
 	}
 	fmt.Printf("Post is saved to BigTable: %s\n", p.Message)
-}
+} */
 
 
 
